@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# App template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A template for building React web applications quickly.
 
-Currently, two official plugins are available:
+Uses
+- [React](https://react.dev) with [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vite.dev) as a dev server and bundler for production
+- [Bun](https://bun.sh) as a package manager
+- [TanStack Router](https://tanstack.com/router/latest) for file-based routing
+- [Mantine](https://mantine.dev) for UI components
+- [Pre-commit](https://pre-commit.com) for managing pre-commit hooks
+- [Biome](https://biomejs.dev) as a code formatter and linter
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
+Pre-requisites
+- [Bun](https://bun.sh/docs/installation)
+- [Pre-commit](https://pre-commit.com/#install)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Setup
+- First time: Run `pre-commit install` to set up the git pre-commit hooks
+- `bun install` to install dependencies
+- `bun run dev` to run the dev server
